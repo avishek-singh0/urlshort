@@ -13,5 +13,5 @@ mongoose.connect(DB, {
     console.log('Connected to Mongodb ')
 })
 const app = require("./app");
-
-app.listen(3001,()=>console.log('Server is running at 3001'));
+const PORT = process.env.PORT || 3001
+app.listen(PORT,()=>console.log('Server is running at 3001'));
