@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require('cors');
 const urlRoute = require('./routes/url');
+const userRoute = require('./routes/user')
 const URL = require('./models/url')
 const app = express();
 
@@ -38,6 +39,7 @@ console.log(entry.redirectURL)
 
 // Mounting routes
 app.use('/url',urlRoute);
+app.use('/user',userRoute);
 
 
 app.use((req, res, next) => {

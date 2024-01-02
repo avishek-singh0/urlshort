@@ -32,3 +32,29 @@ catch (error) {
 }
 
 
+
+exports.allUrl = async (req, res) => {
+  try {
+    const allUrls = await URL.find({}); 
+
+    return res.status(200).json({
+      allUrls
+    });
+  } catch (error) {
+    return res.status(500).json({
+      error: 'Internal server error'
+    });
+  }
+};
+
+
+exports.analytics  = async(req,res)=>{
+const shortId = req.params.shortId;
+const result  = await URL.findOne({ shortId});
+return res.json({
+  totalClicks: result.visitHistory.length,
+  analytics: result.visitHistory
+});
+
+}
+
