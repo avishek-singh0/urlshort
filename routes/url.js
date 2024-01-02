@@ -5,7 +5,7 @@ const {handlegenerateNewShortUrl,analytics,allUrl} = require('./../controller/ur
 const authController = require('.././controller/auth');
 
 
-router.post('/',authController.protect,handlegenerateNewShortUrl);
+router.post('/',handlegenerateNewShortUrl);
 
 router.get('/analytics/:shortId',analytics);
 
