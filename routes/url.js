@@ -9,7 +9,7 @@ router.post('/',handlegenerateNewShortUrl);
 
 router.get('/analytics/:shortId',analytics);
 
-router.get('/allurls',authController.protect,allUrl);
+router.get('/allurls',allUrl);
 
 
 module.exports = router;
